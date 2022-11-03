@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Naruto Quotes</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <h1 data-position="header">Welcome to the Hidden Leaf!</h1>
+
+  <section data-position="add-quote">
+    <h2>Add quote</h2>
+
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="Name" name="name">
+      <input type="text" placeholder="Quote" name="quote">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section data-position="update-quote">
+    <div>
+      <h2>Sasuke invades the Leaf</h2>
+      <p>
+        Replace the first Naruto quote with a quote written by Sasuke.
+      </p>
+      <button id="update-button">Replace Naruto's quote</button>
+    </div>
+  </section>
+
+  <section data-position="delete-quote">
+    <div>
+      <h2>Delete Sasuke Quote</h2>
+      <p>
+        Delete one Sasuke quote. Does nothing if there are no more Sasuke quotes.
+      </p>
+      <button id="delete-button">Delete Sasuke's quote</button>
+    </div>
+    <div id="message"></div>
+  </section>
+
+  <section data-position="quotes">
+    <h2>Quotes</h2>
+    
+    <ul class="quotes">
+      <% for(var i = 0; i < quotes.length; i++){%>
+        <li class="quote">
+          <span><%= quotes[i].name %></span> -
+          <span><%= quotes[i].quote %></span>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+
+  <script src="/main.js"></script>
+</body>
+</html>
