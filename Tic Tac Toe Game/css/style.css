@@ -1,0 +1,114 @@
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: turquoise;
+}
+h1{
+    text-align: center;
+    color: currentColor;
+}
+#board{
+    display: grid;
+    position: relative;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    cursor: pointer;
+}
+.tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: currentColor;
+    font-size: 2em;
+    text-align: center;
+}
+.rightBorder{
+    border-right: .2em solid currentColor;
+}
+.bottomBorder{
+    border-bottom: .2em solid currentColor;
+}
+#strike{
+    position: absolute;
+    background-color: red;
+}
+.strike-row-1{
+    width: 100%;
+    height: 4px;
+    top: 15%;
+}
+.strike-row-2{
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+.strike-row-3{
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+.strike-column-1{
+    height: 100%;
+    width: 4px;
+    left: 15%;
+}
+.strike-column-2{
+    height: 100%;
+    width: 4px;
+    left: 48%;
+}
+.strike-column-3{
+    height: 100%;
+    width: 4px;
+    left: 83%;
+}
+.strike-diagonal-1{
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 6%;
+    transform: skewY(45deg);
+}
+.strike-diagonal-2{
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 4%;
+    transform: skewY(-45deg);
+}
+
+#gameOverArea{
+    text-align: center;
+    border: 8px solid currentColor;
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+}
+h2{
+    color: currentColor;
+    font-size: 2em;
+    margin-top: 0px;
+}
+button{
+    background-color: transparent;
+    color: currentColor;
+    border: 1px dashed currentColor;
+    font-size: 1em;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+.visible{
+    display: block;
+}
+.x-hover:hover::after{
+    content: "X";
+    opacity: 0.4;
+}
+.o-hover:hover::after{
+    content: "O";
+    opacity: 0.4;
+}
