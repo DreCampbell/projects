@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Quote App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 data-position="header">Welcome to the Hidden Leaf!</h1>
+
+    <section data-position="add-quote">
+        <h2>Add Quotes</h2>
+
+        <form action="/quotes" method="POST">
+            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Quote" name="quote">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+    <section data-position="update-quote">
+        <div>
+            <h2>Substitution Jutsu!</h2>
+            <p>
+                Replace Sasuke's first quote with a quote written by Naruto
+            </p>
+            <button id="update-button">Replace Sasuke's quote</button>
+        </div>
+    </section>
+    
+    <section data-position="delete-quote">
+        <div>
+            <h2>Remove Naruto Quote</h2>
+            <p>
+                Delete one Naruto quote. Does nothing if there are no more Naruto quotes
+            </p>
+            <button id="delete-button">Delete Naruto's quote</button>
+        </div>
+        <div id="message"></div>
+    </section>
+
+    <section  data-position="quotes">
+
+        <ul class="quotes">
+            <% for(let i = 0; i < quotes.length; i++) {%>
+                <li class="quote">
+                    <span><%= quotes[i].name %></span>
+                    <span>- "<%= quotes[i].quote %>"</span>
+                    <span class="fa-solid fa-trash"></span>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+
+        <script src="https://kit.fontawesome.com/4081cbc0e0.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

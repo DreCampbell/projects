@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Quote Tracker</title>
+</head>
+<body>
+    <h1 data-position="header">That's my Ninja way!</h1>
+
+    <section data-position="add-quote">
+        <h2>Add Quote</h2>
+        
+        <form action="/quotes" method="POST">
+            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Quote" name="quote">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
